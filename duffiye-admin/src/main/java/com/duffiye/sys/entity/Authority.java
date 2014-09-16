@@ -22,7 +22,8 @@ import javax.persistence.Table;
 import org.hibernate.annotations.Fetch;
 import org.hibernate.annotations.FetchMode;
 
-import com.duffiye.dao.entity.IdEntity;
+import com.duffiye.dao.entity.IEntity;
+
 
 
 /** 
@@ -35,7 +36,7 @@ import com.duffiye.dao.entity.IdEntity;
 */
 @Entity
 @Table(name = "t_sys_authority")
-public class Authority extends IdEntity implements java.io.Serializable {
+public class Authority implements IEntity<Long> {
 
     /** 
     *serialVersionUID 
@@ -70,6 +71,8 @@ public class Authority extends IdEntity implements java.io.Serializable {
     *children 子权限
     */
     private List<Authority> children = new ArrayList<Authority>();
+    
+    private Long id;
     
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)

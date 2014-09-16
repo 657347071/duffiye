@@ -4,10 +4,10 @@ import java.util.Collection;
 import java.util.List;
 
 import com.duffiye.dao.dto.IdDTO;
-import com.duffiye.dao.entity.IdEntity;
+import com.duffiye.dao.entity.IEntity;
 
 
-public interface IAssembler<T extends IdDTO, M extends IdEntity> {
+public interface IAssembler<T extends IdDTO, M extends IEntity<Long>> {
     M newModel();
 
     T newDTO();

@@ -16,7 +16,9 @@ import javax.persistence.Table;
 import org.hibernate.annotations.Fetch;
 import org.hibernate.annotations.FetchMode;
 
-import com.duffiye.dao.entity.IdEntity;
+import com.duffiye.dao.entity.IEntity;
+
+
 
 
 /** 
@@ -28,7 +30,9 @@ import com.duffiye.dao.entity.IdEntity;
 */
 @Entity
 @Table(name = "t_sys_menu")
-public class Menu extends IdEntity {
+public class Menu implements IEntity<Long> {
+	
+	private Long id;
     /** 
     *text 显示文字 
     */

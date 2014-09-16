@@ -2,3 +2,6 @@
 *.settings/
 .project
 /duffiye-dao/target/*
+/duffiye-admin/.classpath
+/duffiye-admin/target/*
+/duffiye-dao/.classpath

@@ -15,8 +15,7 @@ import javax.persistence.Table;
 import org.hibernate.annotations.Fetch;
 import org.hibernate.annotations.FetchMode;
 
-import com.duffiye.dao.entity.BasicEntity;
-import com.duffiye.dao.entity.IdEntity;
+import com.duffiye.dao.entity.IEntity;
 
 
 /** 
@@ -28,7 +27,7 @@ import com.duffiye.dao.entity.IdEntity;
 */
 @Entity
 @Table(name = "t_sys_role")
-public class Role extends IdEntity {
+public class Role implements IEntity<Long> {
 
     /** 
     *name 名称
@@ -52,6 +51,8 @@ public class Role extends IdEntity {
     *users 用户
     */
     private Set<User> users;
+    
+    private Long id;
     
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)

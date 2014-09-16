@@ -12,7 +12,7 @@ import org.hibernate.HibernateException;
 
 import com.duffiye.dao.IGenericDAO;
 import com.duffiye.dao.common.Paginator;
-import com.duffiye.dao.entity.IdEntity;
+import com.duffiye.dao.entity.IEntity;
 import com.duffiye.dao.exception.DAOException;
 import com.duffiye.dao.exception.ObjectNotFoundException;
 
@@ -22,7 +22,7 @@ import com.duffiye.dao.exception.ObjectNotFoundException;
  * 
  */
 @SuppressWarnings("unchecked")
-public abstract class GenericDAO<T extends IdEntity> implements IGenericDAO<T> {
+public abstract class GenericDAO<T extends IEntity<Long>> implements IGenericDAO<T> {
 //    protected final Logger logger = LoggerFactory.getLogger(getClass());
 
     protected Class<T> clz;

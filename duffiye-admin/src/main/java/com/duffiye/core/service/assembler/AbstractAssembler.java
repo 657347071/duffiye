@@ -21,10 +21,10 @@ import org.springframework.beans.BeanUtils;
 import com.duffiye.core.service.IAssembler;
 import com.duffiye.core.utils.DateUtils;
 import com.duffiye.dao.dto.IdDTO;
-import com.duffiye.dao.entity.IdEntity;
+import com.duffiye.dao.entity.IEntity;
 
 
-public abstract class AbstractAssembler<T extends IdDTO, M extends IdEntity> implements IAssembler<T, M> {
+public abstract class AbstractAssembler<T extends IdDTO, M extends IEntity<Long>> implements IAssembler<T, M> {
     protected Logger logger = LoggerFactory.getLogger(getClass());
     protected Class<T> clzT;
     protected Class<M> clzM;

@@ -19,8 +19,7 @@ import com.duffiye.core.utils.NumberUtils;
 import com.duffiye.dao.IGenericDAO;
 import com.duffiye.dao.common.Paginator;
 import com.duffiye.dao.dto.IdDTO;
-import com.duffiye.dao.entity.BasicEntity;
-import com.duffiye.dao.entity.IdEntity;
+import com.duffiye.dao.entity.IEntity;
 import com.duffiye.sys.dao.interfaces.IUserDAO;
 import com.duffiye.sys.dto.UserDTO;
 import com.duffiye.sys.entity.User;
@@ -29,7 +28,7 @@ import com.duffiye.sys.entity.User;
 
 @Transactional
 @SuppressWarnings("unchecked")
-public abstract class AbstractServer<T extends IdDTO, M extends IdEntity, A extends IAssembler<T, M>> implements IServer<T> {
+public abstract class AbstractServer<T extends IdDTO, M extends IEntity<Long>, A extends IAssembler<T, M>> implements IServer<T> {
     protected Logger logger = LoggerFactory.getLogger(getClass());
     private Class<IAssembler<T, M>> assembler;
     private ThreadLocal<User> operation;
@@ -131,8 +130,8 @@ public abstract class AbstractServer<T extends IdDTO, M extends IdEntity, A exte
 
     protected void buildData(M model, T dto, boolean isNew) {
         getAssembler().toModel(model, dto);
-        if (model instanceof BasicEntity) {
-            BasicEntity entity = (BasicEntity) model;
+        if (model instanceof IEntity) {
+            IEntity<Long> entity = (IEntity<Long>) model;
          //   entity.setOperation(getOperation());
           //  entity.setOperTime(getCurrentTime());
         }

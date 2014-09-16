@@ -5,12 +5,13 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
-import com.duffiye.dao.entity.IdEntity;
+import com.duffiye.dao.entity.IEntity;
 
 @Entity
 @Table(name="t_user")
-public class User extends IdEntity {
+public class User implements IEntity<Long> {
 
+	private Long id;
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)

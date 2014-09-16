@@ -17,7 +17,7 @@ import org.apache.commons.lang.builder.ToStringBuilder;
 import org.hibernate.annotations.Fetch;
 import org.hibernate.annotations.FetchMode;
 
-import com.duffiye.dao.entity.IdEntity;
+import com.duffiye.dao.entity.IEntity;
 
 
 /**
@@ -27,7 +27,7 @@ import com.duffiye.dao.entity.IdEntity;
  */
 @Entity
 @Table(name = "t_sys_user")
-public class User extends IdEntity {
+public class User implements IEntity<Long> {
     //登陆名
     private String loginName;
     //密码
@@ -45,6 +45,8 @@ public class User extends IdEntity {
 
     //角色集
     private Set<Role> roles;
+    
+    private Long id;
     
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
