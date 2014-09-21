@@ -16,6 +16,8 @@
 	<!-- <context:exclude-filter type="annotation" expression="org.springframework.stereotype.Repository" 
 		/> -->
 	<!-- </context:component-scan> -->
+	
+	<global-method-security pre-post-annotations='enabled' /> 
 
 	<!-- 不要过滤图片等静态资源 -->
 	<http pattern="resources/static/**/*.jpg" security="none" />
