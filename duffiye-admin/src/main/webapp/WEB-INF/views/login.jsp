@@ -28,10 +28,10 @@
             <form action="${ctx}/j_spring_security_check" method="POST">
                 <div class="body bg-gray">
                     <div class="form-group">
-                        <input type="text" name="account" class="form-control" placeholder="User ID"/>
+                        <input type="text" name="j_username" class="form-control" placeholder="User ID"/>
                     </div>
                     <div class="form-group">
-                        <input type="password" name="password" class="form-control" placeholder="Password"/>
+                        <input type="password" name="j_password" class="form-control" placeholder="Password"/>
                     </div>
 <!--                     <div class="form-group"> -->
 <!-- 	                    <div class="input-group input-group-lg"> -->
